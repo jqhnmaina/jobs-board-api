@@ -1,0 +1,73 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Company;
+use App\Http\Resources\CompanyResource;
+use Illuminate\Http\Request;
+
+class CompanyController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        return CompanyResource::collection(
+            Company::with('owner')->get()
+        );
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'email' => 'nullable|email',
+            'website' => 'nullable|url',
+        ]);
+
+        $data['owner_id'] = auth()->id();
+
+        $company = Company::create($data);
+
+        return new CompanyResource($company->load('owner'));
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Company $company)
+    {
+        $company->load('owner');
+        return new CompanyResource($company);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Company $company)
+    {
+        $data = $request->validate([
+            'name' => 'sometimes|required|string|max:255',
+            'description' => 'sometimes|required|string',
+            'email' => 'nullable|email|unique:companies,email,' . $company->id,
+            'address' => 'nullable|string',
+        ]);
+
+        $company->update($data);
+        return new CompanyResource($company);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Company $company)
+    {
+        $company->delete();
+        return response()->json(['message' => 'Company deleted']);
+    }
+}
