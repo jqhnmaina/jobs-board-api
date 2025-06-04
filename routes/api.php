@@ -9,11 +9,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
     Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/users', [UserController::class, 'store']);
 });
 
 Route::prefix('v1')->middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
-    Route::apiResource('users', UserController::class);
+    Route::get('/users/{user}', [UserController::class, 'show']);
+    Route::put('/users/{user}', [UserController::class, 'update']);
     Route::get('/companies/{company}/job-applications', [JobApplicationController::class, 'companyApplications']);
     Route::apiResource('companies', CompanyController::class);
     Route::apiResource('job-postings', JobPostingController::class);

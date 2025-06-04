@@ -10,14 +10,6 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -34,7 +26,12 @@ class UserController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        return new UserResource($user);
+        $token = $user->createToken('api-token')->plainTextToken;
+
+        return response()->json([
+            'user' => new UserResource($user),
+            'token' => $token,
+        ]);
     }
 
     /**
@@ -63,14 +60,5 @@ class UserController extends Controller
         $user->update($data);
 
         return new UserResource($user);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(User $user)
-    {
-        $user->delete();
-        return response()->json(['message' => 'User deleted']);
     }
 }

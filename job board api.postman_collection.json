@@ -1,0 +1,1999 @@
+{
+	"info": {
+		"_postman_id": "b8c45113-d9a8-4478-bfe7-40e48c9df74e",
+		"name": "job board api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2959118"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"cortney.deckow@example.net\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"cortney.deckow@example.net\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Jun 2025 22:41:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"Terry Beatty Jr.\",\n        \"email\": \"cortney.deckow@example.net\",\n        \"email_verified_at\": \"2025-06-03T22:39:44.000000Z\",\n        \"created_at\": \"2025-06-03T22:39:44.000000Z\"\n    },\n    \"token\": \"1|xhZnkUsLb3jom2vOIc9CvoDutY0Ooo7iByEypwR44b3f2a88\"\n}"
+						}
+					]
+				},
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"cjohndoe@example.net\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"cjohndoe@example.net\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/users",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 04 Jun 2025 04:13:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"id\": 5561,\n        \"name\": \"John Doe\",\n        \"email\": \"cjohndoe@example.net\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2025-06-04T04:13:09.000000Z\"\n    },\n    \"token\": \"1|0pJqcWBGCMx8vVo8ZztIP0htHuERZyR397T1mkUA1046c88b\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Doe updated\",\n    \"email\": \"updatedjohndoe@example.net\",\n    \"password\": \"passwordupdated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/users/5561",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"5561"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update user",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"John Doe updated\",\n    \"email\": \"updatedjohndoe@example.net\",\n    \"password\": \"passwordupdated\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/users/5561",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"5561"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 04 Jun 2025 04:15:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 5561,\n        \"name\": \"John Doe updated\",\n        \"email\": \"updatedjohndoe@example.net\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2025-06-04T04:13:09.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Doe updated\",\n    \"email\": \"updatedjohndoe@example.net\",\n    \"password\": \"passwordupdated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/users/5561",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"5561"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get user details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/users/5561",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"5561"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 04 Jun 2025 04:16:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 5561,\n        \"name\": \"John Doe updated\",\n        \"email\": \"updatedjohndoe@example.net\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2025-06-04T04:13:09.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/v1/logout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 04 Jun 2025 04:17:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Successfully logged out\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "companies",
+			"item": [
+				{
+					"name": "list companies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/companies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"companies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list companies",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/companies",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"companies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Jun 2025 22:44:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Johns LLC\",\n            \"description\": \"Cross-group stable initiative\",\n            \"email\": \"ydietrich@example.com\",\n            \"website\": \"https://swift.com/dolor-et-alias-sequi-et-itaque-in-maiores.html\",\n            \"owner\": {\n                \"id\": 1,\n                \"name\": \"Terry Beatty Jr.\",\n                \"email\": \"cortney.deckow@example.net\"\n            },\n            \"created_at\": \"2025-06-03 22:39:44\",\n            \"updated_at\": \"2025-06-03 22:39:44\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Corwin, Schultz and Labadie\",\n            \"description\": \"Horizontal global portal\",\n            \"email\": \"lilian17@example.org\",\n            \"website\": \"http://howe.com/veniam-cum-sed-atque-rerum-rerum-sunt\",\n            \"owner\": {\n                \"id\": 1,\n                \"name\": \"Terry Beatty Jr.\",\n                \"email\": \"cortney.deckow@example.net\"\n            },\n            \"created_at\": \"2025-06-03 22:39:44\",\n            \"updated_at\": \"2025-06-03 22:39:44\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Wiza, Weber and Torphy\",\n            \"description\": \"Organic client-server monitoring\",\n            \"email\": \"rosenbaum.desiree@example.net\",\n            \"website\": \"http://www.little.com/et-fuga-quia-doloribus-aliquam-qui\",\n            \"owner\": {\n                \"id\": 1,\n                \"name\": \"Terry Beatty Jr.\",\n                \"email\": \"cortney.deckow@example.net\"\n            },\n            \"created_at\": \"2025-06-03 22:39:44\",\n            \"updated_at\": \"2025-06-03 22:39:44\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Roob PLC\",\n            \"description\": \"Robust real-time service-desk\",\n            \"email\": \"slind@example.net\",\n            \"website\": \"http://metz.com/qui-quidem-porro-aperiam-unde-vel-corrupti-corporis-rem.html\",\n            \"owner\": {\n                \"id\": 1,\n                \"name\": \"Terry Beatty Jr.\",\n                \"email\": \"cortney.deckow@example.net\"\n            },\n            \"created_at\": \"2025-06-03 22:39:44\",\n            \"updated_at\": \"2025-06-03 22:39:44\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Sanford-Torp\",\n            \"description\": \"Focused encompassing infrastructure\",\n            \"email\": \"molly.glover@example.org\",\n            \"website\": \"http://www.olson.com/ad-cumque-esse-iure-nihil-qui-quia-occaecati.html\",\n            \"owner\": {\n                \"id\": 1,\n                \"name\": \"Terry Beatty Jr.\",\n                \"email\": \"cortney.deckow@example.net\"\n            },\n            \"created_at\": \"2025-06-03 22:39:44\",\n            \"updated_at\": \"2025-06-03 22:39:44\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/v1/companies?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/v1/companies?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/companies?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/v1/companies\",\n        \"per_page\": 10,\n        \"to\": 5,\n        \"total\": 5\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/companies/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"companies",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get company",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/companies/2802",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"companies",
+										"2802"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Jun 2025 23:45:52 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 2802,\n        \"name\": \"PesaKit LTD updated\",\n        \"description\": \"Random description updated\",\n        \"email\": \"johndoe@updatedpesakit.com\",\n        \"website\": \"https://pesakit.com\",\n        \"owner\": {\n            \"id\": 1,\n            \"name\": \"Terry Beatty Jr.\",\n            \"email\": \"cortney.deckow@example.net\"\n        },\n        \"created_at\": \"2025-06-03 23:13:25\",\n        \"updated_at\": \"2025-06-03 23:16:45\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"PesaKit LTD\",\n    \"description\": \"Random description\",\n    \"email\": \"johndoe@pesakit.com\",\n    \"website\": \"https://pesakit.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/companies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"companies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create company",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"PesaKit LTD\",\n    \"description\": \"Random description\",\n    \"email\": \"johndoe@pesakit.com\",\n    \"website\": \"https://pesakit.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/companies",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"companies"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Jun 2025 23:13:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 2802,\n        \"name\": \"PesaKit LTD\",\n        \"description\": \"Random description\",\n        \"email\": \"johndoe@pesakit.com\",\n        \"website\": \"https://pesakit.com\",\n        \"owner\": {\n            \"id\": 1,\n            \"name\": \"Terry Beatty Jr.\",\n            \"email\": \"cortney.deckow@example.net\"\n        },\n        \"created_at\": \"2025-06-03 23:13:25\",\n        \"updated_at\": \"2025-06-03 23:13:25\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"PesaKit LTD updated\",\n    \"description\": \"Random description updated\",\n    \"email\": \"johndoe@updatedpesakit.com\",\n    \"website\": \"https://updated.pesakit.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/companies/2802",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"companies",
+								"2802"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update company",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"PesaKit LTD updated\",\n    \"description\": \"Random description updated\",\n    \"email\": \"johndoe@updatedpesakit.com\",\n    \"website\": \"https://updated.pesakit.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/companies/2802",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"companies",
+										"2802"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Jun 2025 23:16:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 2802,\n        \"name\": \"PesaKit LTD updated\",\n        \"description\": \"Random description updated\",\n        \"email\": \"johndoe@updatedpesakit.com\",\n        \"website\": \"https://pesakit.com\",\n        \"owner\": {\n            \"id\": 1,\n            \"name\": \"Terry Beatty Jr.\",\n            \"email\": \"cortney.deckow@example.net\"\n        },\n        \"created_at\": \"2025-06-03 23:13:25\",\n        \"updated_at\": \"2025-06-03 23:16:45\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "job posting",
+			"item": [
+				{
+					"name": "list job posting",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/job-postings?active_only=false&job_type=remote&search=Canada",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"job-postings"
+							],
+							"query": [
+								{
+									"key": "active_only",
+									"value": "false",
+									"description": "filters by expires at column"
+								},
+								{
+									"key": "job_type",
+									"value": "remote",
+									"description": "can be `remote`, `hybrid` or `full time`"
+								},
+								{
+									"key": "search",
+									"value": "Canada",
+									"description": "searches location and title"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list job posting",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/job-postings?active_only=false&job_type=remote&search=Canada",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"job-postings"
+									],
+									"query": [
+										{
+											"key": "active_only",
+											"value": "false",
+											"description": "filters by expires at column"
+										},
+										{
+											"key": "job_type",
+											"value": "remote",
+											"description": "can be `remote`, `hybrid` or `full time`"
+										},
+										{
+											"key": "search",
+											"value": "Canada",
+											"description": "searches location and title"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 04 Jun 2025 02:22:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 2739,\n            \"title\": \"Baker\",\n            \"description\": \"Business-focused regional matrix\",\n            \"cv_required\": false,\n            \"cover_letter_required\": true,\n            \"location\": \"Canada\",\n            \"min_salary\": 113812,\n            \"max_salary\": 1469239,\n            \"job_type\": \"remote\",\n            \"expires_at\": \"2014-04-14 00:00:00\",\n            \"company\": {\n                \"id\": 2789,\n                \"name\": \"Sporer, Hudson and Kuhn\",\n                \"description\": \"Progressive logistical matrices\",\n                \"email\": \"schuyler38@example.net\",\n                \"website\": \"http://wisoky.com/\",\n                \"created_at\": \"2025-06-03 22:40:37\",\n                \"updated_at\": \"2025-06-03 22:40:37\"\n            },\n            \"created_at\": \"2025-06-03 22:40:37\",\n            \"updated_at\": \"2025-06-03 22:40:37\"\n        },\n        {\n            \"id\": 2417,\n            \"title\": \"Scientific Photographer\",\n            \"description\": \"Mandatory composite adapter\",\n            \"cv_required\": true,\n            \"cover_letter_required\": true,\n            \"location\": \"Canada\",\n            \"min_salary\": 128190,\n            \"max_salary\": 904831,\n            \"job_type\": \"remote\",\n            \"expires_at\": \"1982-06-08 00:00:00\",\n            \"company\": {\n                \"id\": 2462,\n                \"name\": \"Olson PLC\",\n                \"description\": \"Seamless bottom-line alliance\",\n                \"email\": \"velda.kohler@example.net\",\n                \"website\": \"http://barton.info/numquam-quibusdam-iste-soluta-vitae-atque-voluptas-architecto\",\n                \"created_at\": \"2025-06-03 22:40:31\",\n                \"updated_at\": \"2025-06-03 22:40:31\"\n            },\n            \"created_at\": \"2025-06-03 22:40:31\",\n            \"updated_at\": \"2025-06-03 22:40:31\"\n        },\n        {\n            \"id\": 1419,\n            \"title\": \"Radiologic Technician\",\n            \"description\": \"Multi-layered global throughput\",\n            \"cv_required\": false,\n            \"cover_letter_required\": false,\n            \"location\": \"Canada\",\n            \"min_salary\": 128248,\n            \"max_salary\": 1248823,\n            \"job_type\": \"remote\",\n            \"expires_at\": \"2016-02-27 00:00:00\",\n            \"company\": {\n                \"id\": 1449,\n                \"name\": \"Bergstrom, Hodkiewicz and Runte\",\n                \"description\": \"Polarised transitional portal\",\n                \"email\": \"lebsack.tillman@example.com\",\n                \"website\": \"http://www.douglas.biz/\",\n                \"created_at\": \"2025-06-03 22:40:11\",\n                \"updated_at\": \"2025-06-03 22:40:11\"\n            },\n            \"created_at\": \"2025-06-03 22:40:11\",\n            \"updated_at\": \"2025-06-03 22:40:11\"\n        },\n        {\n            \"id\": 1134,\n            \"title\": \"Order Filler\",\n            \"description\": \"Reduced multi-state blockchain\",\n            \"cv_required\": true,\n            \"cover_letter_required\": false,\n            \"location\": \"Canada\",\n            \"min_salary\": 148831,\n            \"max_salary\": 1194449,\n            \"job_type\": \"remote\",\n            \"expires_at\": \"2005-08-18 00:00:00\",\n            \"company\": {\n                \"id\": 1159,\n                \"name\": \"Upton, Kohler and Nader\",\n                \"description\": \"Organized asymmetric utilisation\",\n                \"email\": \"eleazar.ullrich@example.net\",\n                \"website\": \"http://www.eichmann.com/quis-quia-magnam-laborum-qui-sit-officia.html\",\n                \"created_at\": \"2025-06-03 22:40:06\",\n                \"updated_at\": \"2025-06-03 22:40:06\"\n            },\n            \"created_at\": \"2025-06-03 22:40:06\",\n            \"updated_at\": \"2025-06-03 22:40:06\"\n        },\n        {\n            \"id\": 609,\n            \"title\": \"Marriage and Family Therapist\",\n            \"description\": \"Seamless incremental knowledgeuser\",\n            \"cv_required\": false,\n            \"cover_letter_required\": false,\n            \"location\": \"Canada\",\n            \"min_salary\": 122377,\n            \"max_salary\": 943809,\n            \"job_type\": \"remote\",\n            \"expires_at\": \"1979-03-01 00:00:00\",\n            \"company\": {\n                \"id\": 562,\n                \"name\": \"Breitenberg Inc\",\n                \"description\": \"Public-key web-enabled throughput\",\n                \"email\": \"nicolette77@example.net\",\n                \"website\": \"https://www.walsh.org/quia-in-hic-in-laudantium\",\n                \"created_at\": \"2025-06-03 22:39:54\",\n                \"updated_at\": \"2025-06-03 22:39:54\"\n            },\n            \"created_at\": \"2025-06-03 22:39:56\",\n            \"updated_at\": \"2025-06-03 22:39:56\"\n        },\n        {\n            \"id\": 275,\n            \"title\": \"Lodging Manager\",\n            \"description\": \"Diverse maximized product\",\n            \"cv_required\": true,\n            \"cover_letter_required\": true,\n            \"location\": \"Canada\",\n            \"min_salary\": 124124,\n            \"max_salary\": 756201,\n            \"job_type\": \"remote\",\n            \"expires_at\": \"1980-11-28 00:00:00\",\n            \"company\": {\n                \"id\": 280,\n                \"name\": \"Treutel, Toy and Windler\",\n                \"description\": \"Right-sized background productivity\",\n                \"email\": \"mccullough.leanna@example.com\",\n                \"website\": \"https://www.kuvalis.com/architecto-nemo-in-cupiditate-quae\",\n                \"created_at\": \"2025-06-03 22:39:49\",\n                \"updated_at\": \"2025-06-03 22:39:49\"\n            },\n            \"created_at\": \"2025-06-03 22:39:49\",\n            \"updated_at\": \"2025-06-03 22:39:49\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/v1/job-postings?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/v1/job-postings?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/job-postings?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/v1/job-postings\",\n        \"per_page\": 10,\n        \"to\": 6,\n        \"total\": 6\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get job posting",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/job-postings/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"job-postings",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get job posting",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/job-postings/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"job-postings",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 04 Jun 2025 02:17:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"title\": \"Psychiatric Technician\",\n        \"description\": \"Profit-focused local strategy\",\n        \"cv_required\": false,\n        \"cover_letter_required\": true,\n        \"location\": \"Netherlands\",\n        \"min_salary\": 103468,\n        \"max_salary\": 629760,\n        \"job_type\": \"hybrid\",\n        \"expires_at\": \"1998-01-18 00:00:00\",\n        \"company\": {\n            \"id\": 1,\n            \"name\": \"Johns LLC\",\n            \"description\": \"Cross-group stable initiative\",\n            \"email\": \"ydietrich@example.com\",\n            \"website\": \"https://swift.com/dolor-et-alias-sequi-et-itaque-in-maiores.html\",\n            \"created_at\": \"2025-06-03 22:39:44\",\n            \"updated_at\": \"2025-06-03 22:39:44\"\n        },\n        \"created_at\": \"2025-06-03 22:39:44\",\n        \"updated_at\": \"2025-06-03 22:39:44\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create job posting",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"PesaKit LTD Senior Engineer\",\n    \"description\": \"Random description senior Engineer\",\n    \"cv_required\": true,\n    \"cover_letter_required\": false,\n    \"location\": \"Nairobi, Kenya\",\n    \"min_salary\": 1500000,\n    \"max_salary\": 2500000,\n    \"job_type\": \"Full-Time\",\n    \"expires_at\": \"2025-07-01T23:59:59Z\",\n    \"company_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/job-postings",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"job-postings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create job posting",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"PesaKit LTD Senior Engineer\",\n    \"description\": \"Random description senior Engineer\",\n    \"cv_required\": true,\n    \"cover_letter_required\": false,\n    \"location\": \"Nairobi, Kenya\",\n    \"min_salary\": 1500000,\n    \"max_salary\": 2500000,\n    \"job_type\": \"Full-Time\",\n    \"expires_at\": \"2025-07-01T23:59:59Z\",\n    \"company_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/job-postings",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"job-postings"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 04 Jun 2025 02:35:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 2752,\n        \"title\": \"PesaKit LTD Senior Engineer\",\n        \"description\": \"Random description senior Engineer\",\n        \"cv_required\": true,\n        \"cover_letter_required\": false,\n        \"location\": \"Nairobi, Kenya\",\n        \"min_salary\": 1500000,\n        \"max_salary\": 2500000,\n        \"job_type\": \"Full-Time\",\n        \"expires_at\": \"2025-07-01 23:59:59\",\n        \"company\": {\n            \"id\": 1,\n            \"name\": \"Johns LLC\",\n            \"description\": \"Cross-group stable initiative\",\n            \"email\": \"ydietrich@example.com\",\n            \"website\": \"https://swift.com/dolor-et-alias-sequi-et-itaque-in-maiores.html\",\n            \"created_at\": \"2025-06-03 22:39:44\",\n            \"updated_at\": \"2025-06-03 22:39:44\"\n        },\n        \"created_at\": \"2025-06-04 02:35:31\",\n        \"updated_at\": \"2025-06-04 02:35:31\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete job posting",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/job-postings/2752",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"job-postings",
+								"2752"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete job posting",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/job-postings/2752",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"job-postings",
+										"2752"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 04 Jun 2025 02:40:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Deleted\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update job posting",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"PesaKit LTD Senior Engineer Updated\",\n    \"description\": \"Random description senior Engineer Updated\",\n    \"cv_required\": false,\n    \"cover_letter_required\": true,\n    \"location\": \"Nairobi, Kenya\",\n    \"min_salary\": 1500000,\n    \"max_salary\": 2500000,\n    \"job_type\": \"remote\",\n    \"expires_at\": \"2025-05-20T23:59:59Z\",\n    \"company_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/job-postings/2752",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"job-postings",
+								"2752"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update job posting",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"PesaKit LTD Senior Engineer Updated\",\n    \"description\": \"Random description senior Engineer Updated\",\n    \"cv_required\": false,\n    \"cover_letter_required\": true,\n    \"location\": \"Nairobi, Kenya\",\n    \"min_salary\": 1500000,\n    \"max_salary\": 2500000,\n    \"job_type\": \"remote\",\n    \"expires_at\": \"2025-05-20T23:59:59Z\",\n    \"company_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/job-postings/2752",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"job-postings",
+										"2752"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 04 Jun 2025 02:38:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 2752,\n        \"title\": \"PesaKit LTD Senior Engineer Updated\",\n        \"description\": \"Random description senior Engineer Updated\",\n        \"cv_required\": false,\n        \"cover_letter_required\": true,\n        \"location\": \"Nairobi, Kenya\",\n        \"min_salary\": 1500000,\n        \"max_salary\": 2500000,\n        \"job_type\": \"remote\",\n        \"expires_at\": \"2025-05-20 23:59:59\",\n        \"company\": {\n            \"id\": 1,\n            \"name\": \"Johns LLC\",\n            \"description\": \"Cross-group stable initiative\",\n            \"email\": \"ydietrich@example.com\",\n            \"website\": \"https://swift.com/dolor-et-alias-sequi-et-itaque-in-maiores.html\",\n            \"created_at\": \"2025-06-03 22:39:44\",\n            \"updated_at\": \"2025-06-03 22:39:44\"\n        },\n        \"created_at\": \"2025-06-04 02:35:31\",\n        \"updated_at\": \"2025-06-04 02:38:25\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "job application",
+			"item": [
+				{
+					"name": "list job applications",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/job-applications",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"job-applications"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list job applications",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/v1/job-applications",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"job-applications"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 04 Jun 2025 03:30:42 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 2501,\n            \"introduction\": \"job application introduction\",\n            \"cover_letter_path\": \"cover_letters/2XHrvWxNH1E2DoCOXRSqsoCfikgPn2met1WDASBC.pdf\",\n            \"cv_path\": \"cvs/8wpv78mos00VdO1wOSbf887EmLbUzt6j9BQzES3r.pdf\",\n            \"job_posting\": {\n                \"id\": 1000,\n                \"title\": \"Electrical Engineering Technician\",\n                \"description\": \"Quality-focused transitional superstructure\",\n                \"cv_required\": false,\n                \"cover_letter_required\": false,\n                \"location\": \"Mongolia\",\n                \"min_salary\": 110565,\n                \"max_salary\": 553056,\n                \"job_type\": \"full time\",\n                \"expires_at\": \"1997-10-16 00:00:00\",\n                \"company\": {\n                    \"id\": 1020,\n                    \"name\": \"Cartwright, Breitenberg and Roob\",\n                    \"description\": \"Streamlined heuristic definition\",\n                    \"email\": \"lucinda.lang@example.net\",\n                    \"website\": \"http://shanahan.com/et-distinctio-modi-perspiciatis\",\n                    \"created_at\": \"2025-06-03 22:40:03\",\n                    \"updated_at\": \"2025-06-03 22:40:03\"\n                },\n                \"created_at\": \"2025-06-03 22:40:03\",\n                \"updated_at\": \"2025-06-03 22:40:03\"\n            },\n            \"created_at\": \"2025-06-04T03:29:54.000000Z\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/v1/job-applications?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/v1/job-applications?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/job-applications?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/v1/job-applications\",\n        \"per_page\": 10,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "list company job applications",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/job-applications",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"job-applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get job application",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/job-postings/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"job-postings",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get job application",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/v1/job-applications/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"job-applications",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 04 Jun 2025 03:17:42 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"introduction\": \"Ut consectetur eum molestiae sapiente culpa quam sapiente quo. Aut doloribus nemo suscipit animi mollitia rerum. Nulla eum rerum dicta libero. Modi rerum recusandae sed necessitatibus.\",\n        \"cover_letter_path\": \"https://via.placeholder.com/640x480.png/009966?text=libero\",\n        \"cv_path\": \"https://via.placeholder.com/640x480.png/00aacc?text=cum\",\n        \"user\": {\n            \"id\": 21,\n            \"name\": \"Miss Loraine Beier I\",\n            \"email\": \"brooke.okeefe@example.org\",\n            \"email_verified_at\": \"2025-06-03T22:39:44.000000Z\",\n            \"created_at\": \"2025-06-03T22:39:44.000000Z\"\n        },\n        \"job_posting\": {\n            \"id\": 1,\n            \"title\": \"Health Practitioner\",\n            \"description\": \"Virtual bi-directional standardization\",\n            \"cv_required\": true,\n            \"cover_letter_required\": true,\n            \"location\": \"Jersey\",\n            \"min_salary\": 122949,\n            \"max_salary\": 786903,\n            \"job_type\": \"hybrid\",\n            \"expires_at\": \"1989-03-08 00:00:00\",\n            \"company\": {\n                \"id\": 1,\n                \"name\": \"Johns LLC\",\n                \"description\": \"Cross-group stable initiative\",\n                \"email\": \"ydietrich@example.com\",\n                \"website\": \"https://swift.com/dolor-et-alias-sequi-et-itaque-in-maiores.html\",\n                \"created_at\": \"2025-06-03 22:39:44\",\n                \"updated_at\": \"2025-06-03 22:39:44\"\n            },\n            \"created_at\": \"2025-06-03 22:39:44\",\n            \"updated_at\": \"2025-06-03 22:39:44\"\n        },\n        \"created_at\": \"2025-06-03T22:39:44.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create job application",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job_posting_id",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "introduction",
+									"value": "job application introduction",
+									"type": "text"
+								},
+								{
+									"key": "cover_letter",
+									"type": "file",
+									"src": "/Users/jqhn/Documents/development/pesakit/Copy of PesaKit Interview Task_ Laravel Job Board API.docx.pdf"
+								},
+								{
+									"key": "cv",
+									"type": "file",
+									"src": "/Users/jqhn/Documents/development/pesakit/Copy of PesaKit Interview Task_ Laravel Job Board API.docx.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/job-applications",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"job-applications"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create job application",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "job_posting_id",
+											"value": "1000",
+											"type": "text"
+										},
+										{
+											"key": "introduction",
+											"value": "job application introduction",
+											"type": "text"
+										},
+										{
+											"key": "cover_letter",
+											"type": "file",
+											"src": "/Users/jqhn/Documents/development/pesakit/Copy of PesaKit Interview Task_ Laravel Job Board API.docx.pdf"
+										},
+										{
+											"key": "cv",
+											"type": "file",
+											"src": "/Users/jqhn/Documents/development/pesakit/Copy of PesaKit Interview Task_ Laravel Job Board API.docx.pdf"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/job-applications",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"job-applications"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 04 Jun 2025 03:29:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 2501,\n        \"introduction\": \"job application introduction\",\n        \"cover_letter_path\": \"cover_letters/2XHrvWxNH1E2DoCOXRSqsoCfikgPn2met1WDASBC.pdf\",\n        \"cv_path\": \"cvs/8wpv78mos00VdO1wOSbf887EmLbUzt6j9BQzES3r.pdf\",\n        \"created_at\": \"2025-06-04T03:29:54.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use App\Http\Resources\CompanyResource;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
 {
+
+    use AuthorizesRequests;
     /**
      * Display a listing of the resource.
      */
@@ -63,6 +66,8 @@ class CompanyController extends Controller
             'address' => 'nullable|string',
         ]);
 
+        $this->authorize('update', $company);
+
         $company->update($data);
         return new CompanyResource($company);
     }
@@ -72,6 +77,8 @@ class CompanyController extends Controller
      */
     public function destroy(Company $company)
     {
+        $this->authorize('update', $company);
+
         $company->delete();
         return response()->json(['message' => 'Company deleted']);
     }
