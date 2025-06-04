@@ -23,6 +23,11 @@ return new class extends Migration {
             $table->timestampTz('expires_at', precision: 0);
             $table->foreignId('company_id')->constrained('companies');
             $table->timestamps();
+
+            $table->index('title');
+            $table->index('location');
+            $table->index('job_type');
+            $table->index('expires_at');
         });
     }
 

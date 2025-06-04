@@ -14,7 +14,7 @@ class CompanyController extends Controller
     public function index()
     {
         return CompanyResource::collection(
-            Company::with('owner')->get()
+            Company::where('owner_id', auth()->id())->paginate(5)
         );
     }
 
@@ -42,6 +42,11 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
+
+        if (auth()->user()->cannot('update', $company)) {
+            abort(403);
+        }
+
         $company->load('owner');
         return new CompanyResource($company);
     }

@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('cover_letter_path');
             $table->string('cv_path');
             $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('job_post_id')->constrained('job_postings');
+            $table->foreignId('job_posting_id')->constrained('job_postings');
             $table->timestamps();
         });
     }

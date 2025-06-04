@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\JobPosting;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,11 @@ class JobApplicationFactory extends Factory
     public function definition(): array
     {
         return [
-            ''
+            'introduction' => $this->faker->text,
+            'cover_letter_path' => $this->faker->imageUrl(),
+            'cv_path' => $this->faker->imageUrl(),
+            'user_id' => User::factory()->create()->id,
+            'job_posting_id' => JobPosting::factory()->create()->id,
         ];
     }
 }
